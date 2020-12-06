@@ -30,11 +30,12 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("successfuly connected")
     conn.write("Name: SAM")
+    // conn.write('Move: down');
 
     // setTimeout(submitMove, 50, conn)
   });
 
-  conn.on('data', (message) => {
+  conn.on('data', (message) => { // This is receiving data from the server.
     console.log(message);
   });
 
