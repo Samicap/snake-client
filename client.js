@@ -1,22 +1,22 @@
 const net = require('net');
 
-let directions = {
-  0: "up",
-  1: "down",
-  2: "left",
-  3: "right"
-}
+// let directions = {
+//   0: "up",
+//   1: "down",
+//   2: "left",
+//   3: "right"
+// }
 
-function getMove(){
-  let n = Math.floor(Math.random() * 3)
-  return "Move: " + directions[n]
-}
+// function getMove(){
+//   let n = Math.floor(Math.random() * 3)
+//   return "Move: " + directions[n]
+// }
 
-function submitMove(conn){
-  let move = getMove()
-  console.log(move)
-  conn.write(move)
-}
+// function submitMove(conn){
+//   let move = getMove()
+//   console.log(move)
+//   conn.write(move)
+// }
 
 
 const connect = function() {
@@ -35,9 +35,9 @@ const connect = function() {
     // setTimeout(submitMove, 50, conn)
   });
 
-  conn.on('data', (message) => { // This is receiving data from the server.
-    console.log(message);
-  });
+  // conn.on('data', (message) => { // This is receiving data from the server.
+  //   console.log(message);
+  // });
 
   return conn;
 };
