@@ -23,21 +23,19 @@ const connect = function() {
   const conn = net.createConnection({ 
     host: 'localhost',
     port: 50541,
-
   });
 
   conn.setEncoding('utf8');
 
-  // conn.listen(port, function() {
-  //   console.log('Server Running');
-  // }),
-
-
   conn.on("connect", () => {
     console.log("successfuly connected")
-    conn.write('Name: SAM');
+    conn.write("Name: SAM")
 
-    setTimeout(submitMove, 50, conn)
+    // setTimeout(submitMove, 50, conn)
+  });
+
+  conn.on('data', (message) => {
+    console.log(message);
   });
 
   return conn;
