@@ -1,28 +1,10 @@
 const net = require('net');
-
-// let directions = {
-//   0: "up",
-//   1: "down",
-//   2: "left",
-//   3: "right"
-// }
-
-// function getMove(){
-//   let n = Math.floor(Math.random() * 3)
-//   return "Move: " + directions[n]
-// }
-
-// function submitMove(conn){
-//   let move = getMove()
-//   console.log(move)
-//   conn.write(move)
-// }
-
+const { PORT, IP } = require('./constants')
 
 const connect = function() {
   const conn = net.createConnection({ 
-    host: 'localhost',
-    port: 50541,
+    host: IP,
+    port: PORT,
   });
 
   conn.setEncoding('utf8');
